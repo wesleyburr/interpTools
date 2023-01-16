@@ -155,7 +155,7 @@ wt <- simWt(N = 100, p = 0, q = 0 , var = 5) # white noise process
 
 Where the resulting vector of values can be accessed with `wt$value`:
 
-```{r tt_value, cache = TRUE}
+```{r tt_value2, cache = TRUE}
 head(wt$value, 10)
 ```
 
