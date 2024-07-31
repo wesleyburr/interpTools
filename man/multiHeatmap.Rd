@@ -17,13 +17,13 @@ multiHeatmap(
 \arguments{
 \item{crit}{\code{character}; A vector describing the performance metrics of interest}
 
-\item{agEval}{\code{agEvaluate}; An object containing the aggregated performance metrics (result of \code{agEvaluate()})}
+\item{agEval}{\code{aggregate_pf}; An object containing the aggregated performance metrics (result of \code{aggregate_pf()})}
 
 \item{m}{\code{character}; A vector describing the interpolation methods of interest}
 
 \item{by}{\code{character}; Either \code{"crit"} or \code{"method"}}
 
-\item{f}{\code{character}; The statistic of interest that will be depicted by the heatmap. Possible choices are listed in \code{?agEvaluate}.}
+\item{f}{\code{character}; The statistic of interest that will be depicted by the heatmap. Possible choices are listed in \code{?aggregate_pf}.}
 
 \item{d}{\code{numeric}; A vector to indicate datasets of interest}
 

@@ -5,7 +5,7 @@
 #' @param d An integer that is the index of the dataset of interest
 #' @param m A vector of the interpolation methods of interest
 #' @param crit A character string describing the performance metric of interest
-#' @param agEval A list object (result of agEval.R) of aggregated performance metrics
+#' @param agEval A list object (result of aggregate_pf.R) of aggregated performance metrics
 #' @param f "mean" or "median" (default); which statistic to use for f(p,g)
 #' @param cross_section "g" or "p"; specifies which variable to hold constant in the table (gap width or proportion missing)
 #' @param fixedIndex An integer specifying the index position of the variable in "fixed" to hold constant in the table
@@ -47,7 +47,7 @@ CStable <- function(d=1,
     stop()
   }
   
-  stopifnot((layer_type == "method" | layer_type == "dataset"), class(agEval) == "agEvaluate",
+  stopifnot((layer_type == "method" | layer_type == "dataset"), class(agEval) == "aggregate_pf",
             crit %in% rownames(agEval[[1]][[1]][[1]][[1]]),
             length(d) <= length(agEval), length(m) <= length(agEval[[1]][[1]][[1]]),
             f %in% names(agEval[[1]][[1]][[1]][[1]])[1:11],

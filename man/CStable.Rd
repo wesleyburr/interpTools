@@ -19,7 +19,7 @@ CStable(
 \arguments{
 \item{d}{An integer that is the index of the dataset of interest}
 
-\item{agEval}{A list object (result of agEval.R) of aggregated performance metrics}
+\item{agEval}{A list object (result of aggregate_pf.R) of aggregated performance metrics}
 
 \item{m}{A vector of the interpolation methods of interest}
 

@@ -7,10 +7,10 @@
 #' }
 #'
 #' @param crit \code{character}; A vector describing the performance metrics of interest
-#' @param agEval \code{agEvaluate}; An object containing the aggregated performance metrics (result of \code{agEvaluate()})
+#' @param agEval \code{aggregate_pf}; An object containing the aggregated performance metrics (result of \code{aggregate_pf()})
 #' @param m \code{character}; A vector describing the interpolation methods of interest
 #' @param by \code{character}; Either \code{"crit"} or \code{"method"}
-#' @param f \code{character}; The statistic of interest that will be depicted by the heatmap. Possible choices are listed in \code{?agEvaluate}.
+#' @param f \code{character}; The statistic of interest that will be depicted by the heatmap. Possible choices are listed in \code{?aggregate_pf}.
 #' @param d \code{numeric}; A vector to indicate datasets of interest
 #' @param colors \code{character}; A vector of the desired color palette, with entries in HTML format (\code{"#xxxxxx"}) 
 
@@ -32,7 +32,7 @@ multiHeatmap <- function(crit,
   if(by == "crit" & length(crit) < 2) stop("Only one criterion was chosen. Please specify at least one more, or use 'heatmapGrid()' instead.")
   if(by == "method" & length(m) < 2) stop("Only one method was chosen. Please specify at least one more, or use 'heatmapGrid()' instead.")
   
-  if(class(agEval) != "agEvaluate") stop("'agEval' object must be of class 'agEvaluate'. Please use agEvaluate().")
+  if(class(agEval) != "aggregate_pf") stop("'agEval' object must be of class 'aggregate_pf'. Please use aggregate_pf().")
   
   if(by == "method" & length(crit) != 1) stop("'crit' must contain only a single character element if you wish to arrange by method.")
   

@@ -2,8 +2,8 @@
 #' 
 #'  A function to generate a set of heatmaps depicting the performances of particular sets of interpolations. This graphic can be considered as a series of 'compressed' surface plots, arranged by dataset.\cr
 #'  
-#' @param agEval \code{agEvaluate}; An object containing the aggregated performance metrics (result of \code{agEvaluate()})
-#' @param f \code{character}; The statistic of interest that will be depicted by the heatmap. Possible choices are listed in \code{?agEvaluate}.
+#' @param agEval \code{aggregate_pf}; An object containing the aggregated performance metrics (result of \code{aggregate_pf()})
+#' @param f \code{character}; The statistic of interest that will be depicted by the heatmap. Possible choices are listed in \code{?aggregate_pf}.
 #' @param crit \code{character}; A single element describing the performance metric of interest
 #' @param m \code{character}; A single element describing the interpolation methods of interest
 #' @param d \code{numeric}; A vector to indicate datasets of interest
@@ -24,7 +24,7 @@ heatmapGrid <- function(agEval,
   
   #if(by != "crit" & by != "method") stop("'by' must be either 'crit' or 'method'.")
   
-  if(class(agEval) != "agEvaluate") stop("'agEval' object must be of class 'agEvaluate'. Please use agEvaluate().")
+  if(class(agEval) != "aggregate_pf") stop("'agEval' object must be of class 'aggregate_pf'. Please use aggregate_pf().")
   
   if(length(crit) != 1) stop("'crit' must contain only a single character element.")
   if(length(f) != 1) stop("'f' must contain only a single character element.")
