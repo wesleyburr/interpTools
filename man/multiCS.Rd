@@ -18,7 +18,7 @@ multiCS(
 )
 }
 \arguments{
-\item{agEval}{\code{agEvaluate}; An object containing the aggregated performance metrics (result of \code{agEvaluate()})}
+\item{agEval}{\code{aggregate_pf}; An object containing the aggregated performance metrics (result of \code{aggregate_pf()})}
 
 \item{d}{\code{numeric}; A vector to indicate datasets of interest}
 
@@ -28,7 +28,7 @@ multiCS(
 
 \item{layer_type}{\code{character}; How to layer the ribbons (by "method" or by "dataset")}
 
-\item{f}{\code{character}; The statistic of interest defining the ribbon. Possible choices are listed in \code{?agEvaluate}}
+\item{f}{\code{character}; The statistic of interest defining the ribbon. Possible choices are listed in \code{?aggregate_pf}}
 
 \item{cross_section}{\code{character}; An element describing the gap structure variable to represent on the x-axis: either \code{"p"} or \code{"g"}}
 

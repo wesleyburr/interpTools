@@ -9,13 +9,13 @@
 #' ribbon boundary is the \strong{97.5th quantile} value, and the lower ribbon boundary is the
 #' \strong{2.5th quantile} value.
 #'
-#' @param agEval \code{agEvaluate}; An object containing the aggregated performance metrics (result of \code{agEvaluate()})
+#' @param agEval \code{aggregate_pf}; An object containing the aggregated performance metrics (result of \code{aggregate_pf()})
 #' @param cross_section \code{character}; An element describing the gap structure variable to represent on the x-axis: either \code{"p"} or \code{"g"}
 #' @param crit \code{character}; An element describing the performance metric of interest
 #' @param d \code{numeric}; A vector to indicate datasets of interest
 #' @param m \code{character}; A vector of interpolation methods of interest
 #' @param layer_type \code{character}; How to layer the ribbons (by "method" or by "dataset") 
-#' @param f \code{character}; The statistic of interest defining the ribbon. Possible choices are listed in \code{?agEvaluate}
+#' @param f \code{character}; The statistic of interest defining the ribbon. Possible choices are listed in \code{?aggregate_pf}
 #' @param highlight \code{character/numeric}; A single method (if \code{layer_type = "method"}) or dataset (if \code{layer_type = "dataset"}) to highlight.
 #' @param highlight_color \code{character}; An HTML color of format \code{"#xxxxxx"} to apply to \code{highlight}
 #' @param colors \code{character}; A vector of the desired color palette, with entries in HTML format (\code{"#xxxxxx"}) 
@@ -43,7 +43,7 @@ plotCS_un <- function( agEval,
   if(!all(m %in%  names(agEval[[1]][[1]][[1]]))) stop("Method(s) '", paste0(m[!m %in% names(agEval[[1]][[1]][[1]])], collapse = ", ' "),"' not found. Possible choices are: '", paste0(names(agEval[[1]][[1]][[1]]), collapse = "', '"),"'.")
   if(!crit %in% rownames(agEval[[1]][[1]][[1]][[1]])) stop(paste0("Criterion '",crit,"' must be one of ", paste(rownames(agEval[[1]][[1]][[1]][[1]]),collapse = ", "),"."))
   
-  if(class(agEval) != "agEvaluate") stop("'agEval' object must be of class 'agEvaluate'. Please use agEvaluate().")
+  if(class(agEval) != "aggregate_pf") stop("'agEval' object must be of class 'aggregate_pf'. Please use aggregate_pf().")
 
   if(!is.null(highlight)){
     if(length(highlight) != 1) stop("'highlight' must contain only a single character element.")
